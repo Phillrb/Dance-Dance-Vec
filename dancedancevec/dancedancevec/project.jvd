@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project version="1">
+
+	<info>
+		<name><![CDATA[dancedancevec]]></name>
+		<author><![CDATA[mart]]></author>
+		<description />
+		<creation date="10/06/14 23:01:39" />
+		<modification date="10/06/14 23:15:10" />
+	</info>
+
+	<program>
+		<system mode="DBG/AS09" tabSize="8">
+			<source file="data/system/bios.dbg" />
+			<binary file="data/system/bios_fastboot.bin" />
+		</system>
+		<cartridge mode="MAP/ASLINK" tabSize="8">
+			<source file="/Users/mart/Projects/dancedancevec/dancedancevec/intermediate/main.map" />
+			<binary file="/Users/mart/Projects/dancedancevec/dancedancevec/dancedancevec.bin" />
+		</cartridge>
+	</program>
+
+	<breakpoints />
+
+	<watches />
+
+	<options>
+		<property name="BACKTRACE.autoScroll" value="true" />
+		<property name="BACKTRACE.bufferMaxSize" value="2000" />
+		<property name="BACKTRACE.filter.include.rom.calls" value="true" />
+		<property name="BACKTRACE.filter.include.rom.timings" value="false" />
+		<property name="BACKTRACE.synchronize.program" value="true" />
+		<property name="BACKTRACE.synchronize.registers" value="true" />
+		<property name="CONSOLE.autoScroll" value="true" />
+		<property name="CONSOLE.hideDebugText" value="true" />
+		<property name="CYCLES.address.start" value="$F1A2" />
+		<property name="CYCLES.address.stop" value="$F19C" />
+		<property name="CYCLES.histogram.visible" value="true" />
+		<property name="CYCLES.scaling.counter.maximum" value="50000" />
+		<property name="CYCLES.scaling.counter.tick" value="10000" />
+		<property name="CYCLES.scaling.histogram.maximum" value="55000" />
+		<property name="CYCLES.scaling.histogram.tick" value="10000" />
+		<property name="FRAMEBUFFER.antiAlias" value="true" />
+		<property name="FRAMEBUFFER.beamPosition" value="true" />
+		<property name="FRAMEBUFFER.reverse" value="true" />
+		<property name="MEM_CARTRIDGE.header.alignment" value="Left" />
+		<property name="MEM_CARTRIDGE.header.position" value="Top" />
+		<property name="MEM_CARTRIDGE.table.column.ASCII" value="true" />
+		<property name="MEM_CARTRIDGE.table.column.address" value="true" />
+		<property name="MEM_CART_RAM.header.alignment" value="Left" />
+		<property name="MEM_CART_RAM.header.position" value="Top" />
+		<property name="MEM_CART_RAM.snapshot.locked" value="false" />
+		<property name="MEM_CART_RAM.table.column.ASCII" value="true" />
+		<property name="MEM_CART_RAM.table.column.address" value="true" />
+		<property name="MEM_RAM.header.alignment" value="Left" />
+		<property name="MEM_RAM.header.position" value="Top" />
+		<property name="MEM_RAM.snapshot.locked" value="false" />
+		<property name="MEM_RAM.table.column.ASCII" value="true" />
+		<property name="MEM_RAM.table.column.address" value="true" />
+		<property name="MEM_ROM.header.alignment" value="Left" />
+		<property name="MEM_ROM.header.position" value="Top" />
+		<property name="MEM_ROM.table.column.ASCII" value="true" />
+		<property name="MEM_ROM.table.column.address" value="true" />
+		<property name="PROGRAM.header.alignment" value="Center" />
+		<property name="PROGRAM.header.position" value="Top" />
+		<property name="REGISTERS.layout.horizontal" value="true" />
+	</options>
+
+</project>

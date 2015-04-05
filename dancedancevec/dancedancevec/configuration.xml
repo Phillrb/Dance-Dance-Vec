@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration version="4">
+
+	<window x="-1" y="-1" width="-1" height="-1" fullscreen="false" state="0" menuBar="on" />
+	<timing method="FPS" fps="50" nanos="true" />
+	<debug showFps="false" debugFeatures="false" devMode="false" />
+
+	<overall>
+		<option id="firstRun" value="false" />
+		<option id="toggleMenuHelp" value="true" />
+	</overall>
+
+	<audio>
+		<sound enabled="true" volume="1.0" samplingRate="44100" createThread="true" />
+		<noise enabled="false" volume="1.0" />
+	</audio>
+
+	<display aa="true" persistent="true" additive="true" overlay="false" overlayMode="-1" rotation="0" gamma="0.9" brightness="100">
+		<vectors>
+			<thickness lines="1.0" points="2.5" />
+			<wobbling enabled="true" factor="0.125" />
+		</vectors>
+		<chassis enabled="false" zoom="1.0619043" tx="0.0" ty="-0.037877887">
+			<part id="frame" enabled="true" />
+			<part id="port1" enabled="false" />
+			<part id="port2" enabled="false" />
+			<part id="screen" enabled="true" />
+			<part id="holders" enabled="true" />
+			<part id="bayPanel" enabled="false" />
+			<part id="cartridge" enabled="false" />
+		</chassis>
+		<shaders>
+			<shader id="glow" active="true" passes="3">
+				<bufferSize fixed="true" fixedWidth="640" fixedHeight="800" factor="1.0" />
+				<flickering enabled="true" factor="0.2" />
+				<attenuation enabled="true" factor="2.5" />
+				<gains>
+					<horizontal enabled="false" factor="1.0" />
+					<vertical enabled="true" factor="1.35" />
+				</gains>
+				<kernel id="horizontal">
+					<value>1.0</value>
+					<value>2.0</value>
+					<value>3.0</value>
+					<value>4.0</value>
+					<value>5.0</value>
+				</kernel>
+				<kernel id="vertical">
+					<value>1.0</value>
+					<value>2.0</value>
+					<value>3.0</value>
+					<value>4.0</value>
+					<value>5.0</value>
+				</kernel>
+			</shader>
+		</shaders>
+	</display>
+
+	<keymapping>
+		<bind id="exit" key="ESCAPE" />
+		<bind id="menu" key="F11" />
+		<bind id="size" key="F12" />
+		<bind id="pause" key="PAUSE" />
+		<bind id="reset" key="BACK_SPACE" />
+		<bind id="screenshot" key="PRINTSCREEN" />
+		<bind id="save" key="F3" />
+		<bind id="load" key="F4" />
+		<bind id="quicksave" key="F5" />
+		<bind id="quickload" key="F9" />
+		<joystick id="joy1">
+			<bind id="button1" key="Q" />
+			<bind id="button2" key="W" />
+			<bind id="button3" key="E" />
+			<bind id="button4" key="R" />
+			<bind id="up" key="UP" />
+			<bind id="down" key="DOWN" />
+			<bind id="left" key="LEFT" />
+			<bind id="right" key="RIGHT" />
+		</joystick>
+		<joystick id="joy2">
+			<bind id="button1" key="7" />
+			<bind id="button2" key="8" />
+			<bind id="button3" key="9" />
+			<bind id="button4" key="0" />
+			<bind id="up" key="NUMPAD5" />
+			<bind id="down" key="NUMPAD2" />
+			<bind id="left" key="NUMPAD1" />
+			<bind id="right" key="NUMPAD3" />
+		</joystick>
+		<device id="KEYBOARD">
+			<bind id="on" key="SCROLL_LOCK" />
+			<bind id="off" key="SCROLL_LOCK" />
+		</device>
+		<mouse>
+			<sensitivity horizontal="0.75" vertical="0.75" />
+		</mouse>
+	</keymapping>
+
+	<controllers enabled="true" />
+
+	<peripherals>
+		<peripheral port="gameport1" device="JOYSTICK" />
+		<peripheral port="gameport2" device="JOYSTICK" />
+	</peripherals>
+
+	<categories/>
+
+	<authors/>
+
+	<systems default="ROM">
+		<rom id="ROM" name="Project's ROM" path="data/system/bios_fastboot.bin" />
+	</systems>
+
+	<cartridgeMenus/>
+
+	<games selected="CARTRIDGE">
+
+		<game id="CARTRIDGE" name="Project's CARTRIDGE">
+			<roms system="ROM" cartridge="/Users/mart/Projects/dancedancevec/dancedancevec/dancedancevec.bin" />
+			<persistence enabled="true" history="20" />
+			<shininess normal="2.0" blurred="1.5" />
+		</game>
+
+	</games>
+
+</configuration>

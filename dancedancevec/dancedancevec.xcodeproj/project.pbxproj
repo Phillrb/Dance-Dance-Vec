@@ -1,0 +1,231 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		9928445C1AD1CEDD00662A2B /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		9992D97D1AA8969700046E56 /* read.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = read.md; sourceTree = SOURCE_ROOT; };
+		9992D9801AAA649A00046E56 /* stdbool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stdbool.h; sourceTree = "<group>"; };
+		9992D9C21AB340C800046E56 /* sound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sound.h; sourceTree = "<group>"; };
+		99F298051ACA858B00E036C7 /* beats.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = beats.h; sourceTree = "<group>"; };
+		C15148B81914611300B74202 /* vectrex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vectrex.h; sourceTree = "<group>"; };
+		C15148BC1914611300B74202 /* crt0.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = crt0.s; sourceTree = "<group>"; };
+		C15148BD1914611300B74202 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		C15148BF191464E100B74202 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		C186B51A191C46AB00A7E36D /* crt.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = crt.s; sourceTree = "<group>"; };
+		C1EB8A891AA7F4D400B64B37 /* graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = graphics.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		C15148B51914611300B74202 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				C1EB8A891AA7F4D400B64B37 /* graphics.h */,
+				C15148B81914611300B74202 /* vectrex.h */,
+				9928445C1AD1CEDD00662A2B /* main.h */,
+				9992D9801AAA649A00046E56 /* stdbool.h */,
+				9992D9C21AB340C800046E56 /* sound.h */,
+				99F298051ACA858B00E036C7 /* beats.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		C15148BB1914611300B74202 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C186B51A191C46AB00A7E36D /* crt.s */,
+				C15148BC1914611300B74202 /* crt0.s */,
+				C15148BD1914611300B74202 /* main.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		C15148C1191465C800B74202 /* intermediate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = intermediate;
+			sourceTree = "<group>";
+		};
+		C18C80C7182E6C4200A9C2E1 = {
+			isa = PBXGroup;
+			children = (
+				9992D97D1AA8969700046E56 /* read.md */,
+				C1CDDADB191326BC00F6B613 /* resources */,
+				C15148C1191465C800B74202 /* intermediate */,
+				C15148B51914611300B74202 /* include */,
+				C15148BB1914611300B74202 /* src */,
+				C15148BF191464E100B74202 /* build.sh */,
+			);
+			sourceTree = "<group>";
+		};
+		C1CDDADB191326BC00F6B613 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		C18C80CC182E6C4200A9C2E1 /* dancedancevec */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "build.sh $(ACTION)";
+			buildConfigurationList = C18C80CF182E6C4200A9C2E1 /* Build configuration list for PBXLegacyTarget "dancedancevec" */;
+			buildPhases = (
+			);
+			buildToolPath = /bin/bash;
+			buildWorkingDirectory = /Users/pburton/Desktop/DanceDanceVec/dancedancevec;
+			dependencies = (
+			);
+			name = dancedancevec;
+			passBuildSettingsInEnvironment = 1;
+			productName = vecdev;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		C18C80C8182E6C4200A9C2E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Martin White";
+			};
+			buildConfigurationList = C18C80CB182E6C4200A9C2E1 /* Build configuration list for PBXProject "dancedancevec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C18C80C7182E6C4200A9C2E1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C18C80CC182E6C4200A9C2E1 /* dancedancevec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		C18C80CD182E6C4200A9C2E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C18C80CE182E6C4200A9C2E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C18C80D0182E6C4200A9C2E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = dancedancevec;
+			};
+			name = Debug;
+		};
+		C18C80D1182E6C4200A9C2E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = dancedancevec;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C18C80CB182E6C4200A9C2E1 /* Build configuration list for PBXProject "dancedancevec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C18C80CD182E6C4200A9C2E1 /* Debug */,
+				C18C80CE182E6C4200A9C2E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C18C80CF182E6C4200A9C2E1 /* Build configuration list for PBXLegacyTarget "dancedancevec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C18C80D0182E6C4200A9C2E1 /* Debug */,
+				C18C80D1182E6C4200A9C2E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C18C80C8182E6C4200A9C2E1 /* Project object */;
+}

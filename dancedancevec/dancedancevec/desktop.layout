@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<desktop version="1">
+
+	<!-- The sections below MUST occur in the following order : FRAME, DOCKING, VIEW* -->
+
+	<frame x="52" y="22" width="1314" height="746" state="6" />
+
+	<docking><![CDATA[<?xml version="1.0"?><VLDocking version="2.1"><DockingDesktop name=""><DockingPanel><Split orientation="0" location="0.6867647058823529"><Split orientation="1" location="0.49808429118773945"><TabbedDockable><Dockable><Key dockName="PARAJVE"/></Dockable><Dockable><Key dockName="FRAMEBUFFER"/></Dockable><Dockable><Key dockName="PROGRAM"/></Dockable></TabbedDockable><Split orientation="0" location="0.4838012958963283"><TabbedDockable><Dockable><Key dockName="MEM_RAM"/></Dockable><Dockable><Key dockName="MEM_CARTRIDGE"/></Dockable><Dockable><Key dockName="MEM_ROM"/></Dockable></TabbedDockable><Split orientation="0" location="0.6723404255319149"><TabbedDockable><Dockable><Key dockName="BREAKPOINTS"/></Dockable><Dockable><Key dockName="BACKTRACE"/></Dockable><Dockable><Key dockName="WATCH"/></Dockable></TabbedDockable><Dockable><Key dockName="REGISTERS"/></Dockable></Split></Split></Split><Split orientation="1" location="0.5877394636015326"><Dockable><Key dockName="CONSOLE"/></Dockable><Dockable><Key dockName="CYCLES"/></Dockable></Split></Split></DockingPanel><TabGroups><TabGroup><Dockable><Key dockName="PARAJVE"/></Dockable><Dockable><Key dockName="FRAMEBUFFER"/></Dockable><Dockable><Key dockName="PROGRAM"/></Dockable></TabGroup><TabGroup><Dockable><Key dockName="MEM_RAM"/></Dockable><Dockable><Key dockName="MEM_CARTRIDGE"/></Dockable><Dockable><Key dockName="MEM_ROM"/></Dockable></TabGroup><TabGroup><Dockable><Key dockName="BREAKPOINTS"/></Dockable><Dockable><Key dockName="BACKTRACE"/></Dockable><Dockable><Key dockName="WATCH"/></Dockable></TabGroup></TabGroups></DockingDesktop></VLDocking>]]></docking>
+
+	<view name="REGISTERS">
+		<horizontal value="true" />
+	</view>
+
+	<view name="WATCH">
+		<genericFont size="12" />
+		<columns>
+			<width value="48" />
+			<width value="129" />
+			<width value="129" />
+			<width value="130" />
+			<width value="188" />
+		</columns>
+	</view>
+
+	<view name="BACKTRACE">
+		<font size="12"><![CDATA[Lucida Grande]]></font>
+		<columns>
+			<width value="62" />
+			<width value="63" />
+			<width value="62" />
+			<width value="63" />
+			<width value="62" />
+			<width value="63" />
+			<width value="62" />
+			<width value="63" />
+			<width value="62" />
+			<width value="62" />
+		</columns>
+	</view>
+
+</desktop>
