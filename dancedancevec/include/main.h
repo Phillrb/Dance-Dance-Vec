@@ -27,14 +27,6 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
-// delayB that supports unsigned numbers
-void __attribute__((noinline)) delayBU(unsigned int cycles)
-{
-    asm(	"delayBU:"				);
-    asm(	"	decb"				);
-    asm(	"	bne		delayBU"	);
-}
-
 //Draws an arrow
 void drawArrowAtPositionToScale(const int* arrow, int xPos, int yPos, int newScale);
 

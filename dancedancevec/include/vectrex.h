@@ -94,6 +94,14 @@ void initMusicCHK(const int* data);					// 0xF687
 void clearScore(char *score);						// 0xF84F	Clear ascii score pointed to by score
 void addScoreA(int value, char *score);				// 0xF85E	Add value to ascii score
 
+// delayB that supports unsigned numbers
+void __attribute__((noinline)) delayBU(unsigned int cycles)
+{
+    asm(	"delayBU:"				);
+    asm(	"	decb"				);
+    asm(	"	bne		delayBU"	);
+}
+
 #define tstat (*((volatile unsigned int *) 0xc856))
 
 #define pot0 (*((volatile int*) 0xc81b))
