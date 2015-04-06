@@ -40,8 +40,6 @@
 #define NULL 0
 #endif
 
-#include "stdbool.h"
-
 typedef signed char		int8;
 typedef unsigned char 	uint8;
 

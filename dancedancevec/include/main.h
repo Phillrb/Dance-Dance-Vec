@@ -27,6 +27,8 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
+#include "stdbool.h"
+
 //Draws an arrow
 void drawArrowAtPositionToScale(const int* arrow, int xPos, int yPos, int newScale);
 
