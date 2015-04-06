@@ -16,6 +16,6 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-/dancedancevec.bin
-/intermediate/
+dancedancevec/dancedancevec.bin
+dancedancevec/intermediate/*
 
