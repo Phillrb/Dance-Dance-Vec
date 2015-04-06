@@ -53,7 +53,6 @@ const int player2LeftArrowYPos = -54;
 const int pressCountDownMax = 15;
 
 
-
 // Main entry point and game loop
 int main()
 {
@@ -170,29 +169,31 @@ int main()
             }
             
             //Draw arrows in slots for both players - currently using same source
-            if(a & PRBArrowUp)
+            if(a & PRBArrowUp || a & PRBArrowUpHeld)
             {
-                drawArrowAtPositionToScale(upArrow, currentColXPos, player1UpArrowYPos, arrowScale);
-                drawArrowAtPositionToScale(upArrow, currentColXPos, player2UpArrowYPos, arrowScale);
+                drawArrowAtPositionToScale(upArrow, currentColXPos, player1UpArrowYPos, arrowScale, a & PRBArrowUpHeld);
+                drawArrowAtPositionToScale(upArrow, currentColXPos, player2UpArrowYPos, arrowScale, a & PRBArrowUpHeld);
             }
             
-            if(a & PRBArrowRight)
+            if(a & PRBArrowRight || a & PRBArrowRightHeld)
             {
-                drawArrowAtPositionToScale(rightArrow, currentColXPos, player1RightArrowYPos, arrowScale);
-                drawArrowAtPositionToScale(rightArrow, currentColXPos, player2RightArrowYPos, arrowScale);
+                drawArrowAtPositionToScale(rightArrow, currentColXPos, player1RightArrowYPos, arrowScale, a & PRBArrowRightHeld);
+                drawArrowAtPositionToScale(rightArrow, currentColXPos, player2RightArrowYPos, arrowScale, a & PRBArrowRightHeld);
             }
             
-            if(a & PRBArrowDown)
+            if(a & PRBArrowDown || a & PRBArrowDownHeld)
             {
-                drawArrowAtPositionToScale(downArrow, currentColXPos, player1DownArrowYPos, arrowScale);
-                drawArrowAtPositionToScale(downArrow, currentColXPos, player2DownArrowYPos, arrowScale);
+                drawArrowAtPositionToScale(downArrow, currentColXPos, player1DownArrowYPos, arrowScale, a & PRBArrowDownHeld);
+                drawArrowAtPositionToScale(downArrow, currentColXPos, player2DownArrowYPos, arrowScale, a & PRBArrowDownHeld);
             }
             
-            if(a & PRBArrowLeft)
+            if(a & PRBArrowLeft || a & PRBArrowLeftHeld)
             {
-                drawArrowAtPositionToScale(leftArrow, currentColXPos, player1LeftArrowYPos, arrowScale);
-                drawArrowAtPositionToScale(leftArrow, currentColXPos, player2LeftArrowYPos, arrowScale);
+                drawArrowAtPositionToScale(leftArrow, currentColXPos, player1LeftArrowYPos, arrowScale, a & PRBArrowLeftHeld);
+                drawArrowAtPositionToScale(leftArrow, currentColXPos, player2LeftArrowYPos, arrowScale, a & PRBArrowLeftHeld);
             }
+            
+            
         }
         
         //Arrow spawn control
@@ -201,7 +202,15 @@ int main()
             framesUntilArrowSpawn = 0;
         
             songPos++;
-            if (songPos >= sizeof(song1)) songPos = 0;
+            
+            //Replay song forever
+            if (songPos >= sizeof(song1))
+            {
+                //TODO MAKE RESET FUNC
+                songPos = 0;
+                
+            }
+            
             spawnNextArrows = true;
         }
         
@@ -227,12 +236,18 @@ int main()
 }
 
 //Draws an arrow at a particular location
-void drawArrowAtPositionToScale(const int* arrow, int xPos, int yPos, int newScale)
+void drawArrowAtPositionToScale(const int* arrow, int xPos, int yPos, int newScale, bool isHeld)
 {
     reset0Ref();
     scale = drawScaleScreen;
     moveToD(xPos, yPos);
     scale = newScale;
+    if(isHeld)
+    {
+        moveToD(20, 0);
+        drawLineD(40,0);
+        moveToD(-60, 0);
+    }
     drawVLp(arrow,0);
 }
 

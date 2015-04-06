@@ -30,7 +30,7 @@
 #include "stdbool.h"
 
 //Draws an arrow
-void drawArrowAtPositionToScale(const int* arrow, int xPos, int yPos, int newScale);
+void drawArrowAtPositionToScale(const int* arrow, int xPos, int yPos, int newScale, bool isHeld);
 
 //Displays the button pressed with an animation
 void displayConfirmationAnimation(int *buttonPressCountDown, int arrowYPos, const int arrow[], int hitLineXPos, int arrowScale);

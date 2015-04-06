@@ -32,24 +32,21 @@ typedef enum{
     PRBArrowUp = 1,
     PRBArrowRight = 1 << 1,
     PRBArrowDown = 1 << 2,
-    PRBArrowLeft = 1 << 3
+    PRBArrowLeft = 1 << 3,
+    PRBArrowUpHeld = 1 << 4,        //will add a dash after an arrow
+    PRBArrowRightHeld = 1 << 5,     //to indicate user should hold beat
+    PRBArrowDownHeld = 1 << 6,
+    PRBArrowLeftHeld = 1 << 7
 } PRBArrow;
 
-
-const unsigned int song1BeatHoldLengths[3][2] =
-{
-    3, 2, //Arrows at song pos 3 should be held for 2 beats
-    15, 3,
-    19, 2
-};
-
+//These are the 'arrow beats' for a song
 const int song1[20] =
 {
     PRBArrowDown,
     PRBArrowRight,
     PRBArrowUp,
     PRBArrowLeft,
-    PRBArrowDown,                   //5
+    PRBArrowDownHeld,                   //5
     PRBArrowDown,
     PRBArrowRight | PRBArrowLeft,
     PRBArrowUp | PRBArrowDown,
@@ -58,11 +55,11 @@ const int song1[20] =
     0,
     PRBArrowRight | PRBArrowUp,
     PRBArrowRight | PRBArrowUp,
-    PRBArrowLeft | PRBArrowUp,
+    PRBArrowLeft | PRBArrowUpHeld,
     PRBArrowLeft | PRBArrowUp,      //15
-    PRBArrowLeft | PRBArrowDown,
-    PRBArrowLeft | PRBArrowDown,
-    PRBArrowRight | PRBArrowDown,
+    PRBArrowLeftHeld | PRBArrowDown,
+    PRBArrowLeft | PRBArrowDownHeld,
+    PRBArrowRightHeld | PRBArrowDown,
     PRBArrowRight | PRBArrowDown,
     0                               //20
 };
