@@ -42,13 +42,15 @@ const int lastSlotPos = 80;
 
 const int arrowSlotWidth = 20;
 const int player1UpArrowYPos = 54;
-const int player1RightArrowYPos = 42;
-const int player1DownArrowYPos = 30;
-const int player1LeftArrowYPos = 18;
+const int player1DownArrowYPos = 42;
+const int player1LeftArrowYPos = 30;
+const int player1RightArrowYPos = 18;
+
 const int player2UpArrowYPos = -18;
-const int player2RightArrowYPos = -30;
-const int player2DownArrowYPos = -42;
-const int player2LeftArrowYPos = -54;
+const int player2DownArrowYPos = -30;
+const int player2LeftArrowYPos = -42;
+const int player2RightArrowYPos = -54;
+
 
 const int pressCountDownMax = 15;
 
@@ -223,15 +225,16 @@ int main()
         
         //Player 1: check button press and show press action animation
         checkButtonPressAndAnimateConfirmation(true, _JOY1_B1, &upArrowPlayer1ButtonPressCountDown, player1UpArrowYPos, upArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(true, _JOY1_B2, &rightArrowPlayer1ButtonPressCountDown, player1RightArrowYPos, rightArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(true, _JOY1_B3, &downArrowPlayer1ButtonPressCountDown, player1DownArrowYPos, downArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(true, _JOY1_B4, &leftArrowPlayer1ButtonPressCountDown, player1LeftArrowYPos, leftArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(true, _JOY1_B2, &downArrowPlayer1ButtonPressCountDown, player1DownArrowYPos, downArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(true, _JOY1_B3, &leftArrowPlayer1ButtonPressCountDown, player1LeftArrowYPos, leftArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(true, _JOY1_B4, &rightArrowPlayer1ButtonPressCountDown, player1RightArrowYPos, rightArrow, hitLineXPos, arrowScale);
 
         //Player 2: check button press and show press action animation
         checkButtonPressAndAnimateConfirmation(false, _JOY2_B1, &upArrowPlayer2ButtonPressCountDown, player2UpArrowYPos, upArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(false, _JOY2_B2, &rightArrowPlayer2ButtonPressCountDown, player2RightArrowYPos, rightArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(false, _JOY2_B3, &downArrowPlayer2ButtonPressCountDown, player2DownArrowYPos, downArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(false, _JOY2_B4, &leftArrowPlayer2ButtonPressCountDown, player2LeftArrowYPos, leftArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(false, _JOY2_B2, &downArrowPlayer2ButtonPressCountDown, player2DownArrowYPos, downArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(false, _JOY2_B3, &leftArrowPlayer2ButtonPressCountDown, player2LeftArrowYPos, leftArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(false, _JOY2_B4, &rightArrowPlayer2ButtonPressCountDown, player2RightArrowYPos, rightArrow, hitLineXPos, arrowScale);
+
     }
 }
 
@@ -242,11 +245,17 @@ void drawArrowAtPositionToScale(const int* arrow, int xPos, int yPos, int newSca
     scale = drawScaleScreen;
     moveToD(xPos, yPos);
     scale = newScale;
+    
+    //Draw a dashed line denoting to press rapidly
     if(isHeld)
     {
-        moveToD(20, 0);
-        drawLineD(40,0);
-        moveToD(-60, 0);
+        moveToD(22, 0);
+        drawLineD(5,0);
+        moveToD(10, 0);
+        drawLineD(5,0);
+        moveToD(10, 0);
+        drawLineD(5,0);
+        moveToD(-58, 0);
     }
     drawVLp(arrow,0);
 }

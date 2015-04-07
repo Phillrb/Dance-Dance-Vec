@@ -34,34 +34,96 @@ typedef enum{
     PRBArrowDown = 1 << 2,
     PRBArrowLeft = 1 << 3,
     PRBArrowUpHeld = 1 << 4,        //will add a dash after an arrow
-    PRBArrowRightHeld = 1 << 5,     //to indicate user should hold beat
+    PRBArrowRightHeld = 1 << 5,     //to indicate user should rapidly tap for duration
     PRBArrowDownHeld = 1 << 6,
     PRBArrowLeftHeld = 1 << 7
 } PRBArrow;
 
 //These are the 'arrow beats' for a song
-const int song1[20] =
+const int song1[82] =
 {
-    PRBArrowDown,
-    PRBArrowRight,
     PRBArrowUp,
-    PRBArrowLeft,
-    PRBArrowDownHeld,                   //5
-    PRBArrowDown,
-    PRBArrowRight | PRBArrowLeft,
-    PRBArrowUp | PRBArrowDown,
-    PRBArrowRight | PRBArrowLeft,
-    PRBArrowUp | PRBArrowDown,      //10
     0,
-    PRBArrowRight | PRBArrowUp,
-    PRBArrowRight | PRBArrowUp,
-    PRBArrowLeft | PRBArrowUpHeld,
-    PRBArrowLeft | PRBArrowUp,      //15
-    PRBArrowLeftHeld | PRBArrowDown,
-    PRBArrowLeft | PRBArrowDownHeld,
-    PRBArrowRightHeld | PRBArrowDown,
-    PRBArrowRight | PRBArrowDown,
-    0                               //20
+    0,
+    PRBArrowUp,
+    0,
+    0,
+    PRBArrowDown,
+    0,
+    0,
+    PRBArrowDown, //10
+    0,
+    0,
+    PRBArrowUp | PRBArrowDown,
+    0,
+    0,
+    PRBArrowLeft,
+    0,
+    0,
+    PRBArrowLeft,
+    0,  //20
+    0,
+    PRBArrowRight,
+    0,
+    0,
+    PRBArrowRight,
+    0,
+    0,
+    PRBArrowLeft | PRBArrowRight,
+    0,
+    PRBArrowUp, //30
+    PRBArrowDown,
+    PRBArrowLeft,
+    PRBArrowRight,
+    0,
+    0,
+    0,
+    0,
+    PRBArrowRight,
+    PRBArrowLeft,
+    PRBArrowDown,   //40
+    PRBArrowUp,
+    0,
+    0,
+    PRBArrowUp,
+    PRBArrowUp,
+    PRBArrowDown,
+    PRBArrowDown,
+    PRBArrowLeft,
+    PRBArrowRight,
+    PRBArrowLeft,   //50
+    PRBArrowRight,
+    0,
+    PRBArrowUp | PRBArrowRight,
+    0,
+    PRBArrowDown | PRBArrowLeft,
+    0,
+    0,
+    PRBArrowUpHeld,
+    PRBArrowUp,
+    0,              //60
+    PRBArrowDownHeld,
+    PRBArrowDown,
+    0,
+    PRBArrowLeftHeld,
+    PRBArrowLeft,
+    0,
+    PRBArrowRightHeld,
+    PRBArrowRight,
+    0,
+    PRBArrowUpHeld | PRBArrowDownHeld,          //70
+    PRBArrowUp | PRBArrowDown,
+    PRBArrowRight,
+    PRBArrowRight,
+    0,
+    0,
+    PRBArrowLeftHeld |PRBArrowRightHeld,
+    PRBArrowLeft | PRBArrowRight,
+    PRBArrowUp,
+    PRBArrowUp,
+    0,      //80
+    0,
+    0
 };
 
 
