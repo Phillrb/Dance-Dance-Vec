@@ -36,10 +36,10 @@ void drawArrowAtPositionToScale(const int* arrow, int xPos, int yPos, int newSca
 void displayConfirmationAnimation(int *buttonPressCountDown, int arrowYPos, const int arrow[], int hitLineXPos, int arrowScale);
 
 //Check if button pressed and start animation
-void checkButtonPress(bool isPlayer1, int button, int *buttonPressCountDown);
+void checkButtonPress(char* playerScore, int button, int *buttonPressCountDown);
 
 //Check if button pressed and start animation and displays the button pressed with an animation
-void checkButtonPressAndAnimateConfirmation(bool isPlayer1, int button, int *buttonPressCountDown, int arrowYPos, const int arrow[], int hitLineXPos, int arrowScale);
+void checkButtonPressAndAnimateConfirmation(char* playerScore, int button, int *buttonPressCountDown, int arrowYPos, const int arrow[], int hitLineXPos, int arrowScale);
 
 
 #endif

@@ -49,7 +49,7 @@ const int player1RightArrowYPos = 18;
 const int player2UpArrowYPos = -18;
 const int player2DownArrowYPos = -30;
 const int player2LeftArrowYPos = -42;
-const int player2RightArrowYPos = -54;
+const int player2RightArrowYPos = -54; //TODO this offset not perfect for height of these arrows
 
 
 const int pressCountDownMax = 15;
@@ -89,7 +89,10 @@ int main()
     int currentColXPos = 0;
     int currentIntensity = 0x5F;
     
-    bool isPlayer1 = true;
+    char *player1Score;
+    char *player2Score;
+//    clearScore(player1Score);
+//    clearScore(player2Score);
     
     //Initial settings
     intensA(0x5F);
@@ -101,13 +104,13 @@ int main()
     while (true)
     {
         //TODO currently sound does not work!!!
-        initMusicCHK(player_fire_sound);
+//        initMusicCHK(player_fire_sound);
         
         // wait for frame boundary (one frame = 30,000 cyles = 50 Hz)
         waitRecal();
         
         //TODO currently sound does not work!!!
-        doSound();
+//        doSound();
         
         //reset drawing ref
         reset0Ref();
@@ -210,7 +213,8 @@ int main()
             {
                 //TODO MAKE RESET FUNC
                 songPos = 0;
-                
+//                clearScore(player1Score);
+//                clearScore(player2Score);
             }
             
             spawnNextArrows = true;
@@ -224,17 +228,25 @@ int main()
         readButton();
         
         //Player 1: check button press and show press action animation
-        checkButtonPressAndAnimateConfirmation(true, _JOY1_B1, &upArrowPlayer1ButtonPressCountDown, player1UpArrowYPos, upArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(true, _JOY1_B2, &downArrowPlayer1ButtonPressCountDown, player1DownArrowYPos, downArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(true, _JOY1_B3, &leftArrowPlayer1ButtonPressCountDown, player1LeftArrowYPos, leftArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(true, _JOY1_B4, &rightArrowPlayer1ButtonPressCountDown, player1RightArrowYPos, rightArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(player1Score, _JOY1_B1, &upArrowPlayer1ButtonPressCountDown, player1UpArrowYPos, upArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(player1Score, _JOY1_B2, &downArrowPlayer1ButtonPressCountDown, player1DownArrowYPos, downArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(player1Score, _JOY1_B3, &leftArrowPlayer1ButtonPressCountDown, player1LeftArrowYPos, leftArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(player1Score, _JOY1_B4, &rightArrowPlayer1ButtonPressCountDown, player1RightArrowYPos, rightArrow, hitLineXPos, arrowScale);
 
         //Player 2: check button press and show press action animation
-        checkButtonPressAndAnimateConfirmation(false, _JOY2_B1, &upArrowPlayer2ButtonPressCountDown, player2UpArrowYPos, upArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(false, _JOY2_B2, &downArrowPlayer2ButtonPressCountDown, player2DownArrowYPos, downArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(false, _JOY2_B3, &leftArrowPlayer2ButtonPressCountDown, player2LeftArrowYPos, leftArrow, hitLineXPos, arrowScale);
-        checkButtonPressAndAnimateConfirmation(false, _JOY2_B4, &rightArrowPlayer2ButtonPressCountDown, player2RightArrowYPos, rightArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(player2Score, _JOY2_B1, &upArrowPlayer2ButtonPressCountDown, player2UpArrowYPos, upArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(player2Score, _JOY2_B2, &downArrowPlayer2ButtonPressCountDown, player2DownArrowYPos, downArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(player2Score, _JOY2_B3, &leftArrowPlayer2ButtonPressCountDown, player2LeftArrowYPos, leftArrow, hitLineXPos, arrowScale);
+        checkButtonPressAndAnimateConfirmation(player2Score, _JOY2_B4, &rightArrowPlayer2ButtonPressCountDown, player2RightArrowYPos, rightArrow, hitLineXPos, arrowScale);
 
+        
+        //TODO Draw scores
+//        reset0Ref();
+//        moveToD(-120, 35);
+//        printStr(player1Score);
+//        reset0Ref();
+//        moveToD(-120, -15);
+//        printStr(player2Score);
     }
 }
 
@@ -261,14 +273,14 @@ void drawArrowAtPositionToScale(const int* arrow, int xPos, int yPos, int newSca
 }
 
 //Check button press and show press action animation
-void checkButtonPressAndAnimateConfirmation(bool isPlayer1, int button, int *buttonPressCountDown, int arrowYPos, const int arrow[], int hitLineXPos, int arrowScale)
+void checkButtonPressAndAnimateConfirmation(char* playerScore, int button, int *buttonPressCountDown, int arrowYPos, const int arrow[], int hitLineXPos, int arrowScale)
 {
-    checkButtonPress(isPlayer1, button, buttonPressCountDown);
+    checkButtonPress(playerScore, button, buttonPressCountDown);
     displayConfirmationAnimation(buttonPressCountDown, arrowYPos, arrow, hitLineXPos, arrowScale);
 }
 
 //Check button press
-void checkButtonPress(bool isPlayer1, int button, int *buttonPressCountDown){
+void checkButtonPress(char* playerScore, int button, int *buttonPressCountDown){
     
     //Was button pressed by user?
     if(_BTN_CUR_MASK & button)
@@ -276,7 +288,8 @@ void checkButtonPress(bool isPlayer1, int button, int *buttonPressCountDown){
         //Start press confirmation animation
         if(*buttonPressCountDown == pressCountDownMax) *buttonPressCountDown = *buttonPressCountDown - 1;
         
-        //TODO check if correct and increment score! //USE isPlayer1.... possibly just pass score here to increment so this method has no idea the context of the player
+        //TODO check if correct first and then increment score!
+//        addScoreA(10, playerScore);
     }
 }
 
