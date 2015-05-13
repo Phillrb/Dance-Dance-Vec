@@ -13,3 +13,5 @@ Here is the current bin file to run in your emulator of choice: [DanceDanceVec.b
 This project will require song submissions from the community but these can be readily ported from the Atari ST, Amstrad and ZX-Spectrum 128k due to the common sound chip:
 - https://www.youtube.com/watch?v=eSfoQKiXo5g
 - http://en.wikipedia.org/wiki/General_Instrument_AY-3-8910
+
+NOTE: Currently there is no sound, music or scoring! The current implementation just eternally loops.
