@@ -2,7 +2,7 @@
 A 2 player dance mat style game for the GCE / Milton Bradley Vectrex games console (circa 1982). 
 
 ![](/dancedancevec/resources/gameplay1.png)
-![](/dancedancevec/resources/gameplay1.png)
+![](/dancedancevec/resources/gameplay2.png)
 
 Programmed mainly in C (with some Assembler) and developed in Xcode for Mac OSX. 
 Although this game can be played with a standard controller it is recommended to make a set of custom dance mats. Instructions to do so will be supplied... eventually.
