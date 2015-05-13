@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		9928445C1AD1CEDD00662A2B /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		99907E701AE035560066AACD /* music.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = music.h; sourceTree = "<group>"; };
 		9992D97D1AA8969700046E56 /* read.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read.txt; sourceTree = SOURCE_ROOT; };
 		9992D9801AAA649A00046E56 /* stdbool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stdbool.h; sourceTree = "<group>"; };
 		9992D9C21AB340C800046E56 /* sound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sound.h; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 				9992D9801AAA649A00046E56 /* stdbool.h */,
 				9992D9C21AB340C800046E56 /* sound.h */,
 				99F298051ACA858B00E036C7 /* beats.h */,
+				99907E701AE035560066AACD /* music.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
